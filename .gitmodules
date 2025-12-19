@@ -1,0 +1,6 @@
+[submodule "limine"]
+	path = limine
+	url = https://github.com/projectzerodev/limine-binaries.git
+[submodule "kernel/libs/limine"]
+	path = kernel/libs/limine
+	url = https://github.com/projectzerodev/limine-protocol.git

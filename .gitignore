@@ -1,0 +1,5 @@
+zeronix.iso
+*.log
+compile_commands.json
+edk2-ovmf
+.cache/
