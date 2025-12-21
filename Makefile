@@ -33,7 +33,7 @@ help:
 	@printf "  OUTPUT\tISO file output\t\t\tzeronix.iso\n"
 	@printf "  SYSROOT\tTemporary sysroot directory\tsysroot\n"
 
-.PHONY: all
+.PHONY: run
 run: $(OUTPUT) edk2-ovmf
 	@printf ">>> Running in QEMU\n"
 	@qemu-system-x86_64                                                                   \
