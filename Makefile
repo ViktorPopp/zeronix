@@ -41,8 +41,9 @@ run: $(OUTPUT) edk2-ovmf
 		-cdrom $(OUTPUT)                                                                  \
 		$(QEMU_FLAGS)
 
-limine/limine:
-	@printf ">>> Building limine\n"
+.PHONY: bootloader
+bootloader:
+	@printf ">>> Building bootloader\n"
 	@$(MAKE) -C limine > /dev/null 2>&1
 
 .PHONY: kernel
@@ -50,7 +51,7 @@ kernel:
 	@printf ">>> Building kernel\n"
 	@$(MAKE) -C kernel --no-print-directory
 
-$(OUTPUT): limine/limine kernel
+$(OUTPUT): bootloader kernel
 	@printf ">>> Building ISO\n"
 	@rm -rf $(SYSROOT)
 	@mkdir -p $(SYSROOT)/boot
@@ -66,7 +67,7 @@ $(OUTPUT): limine/limine kernel
 	@xorriso $(XORRISO_FLAGS) > /dev/null 2>&1
 	@printf "  RUN\tbios-install\n"
 	@./limine/limine bios-install $(OUTPUT) > /dev/null 2>&1
-	@rm -rf sysroot
+	@rm -rf $(SYSROOT)
 
 .PHONY: bear
 bear: clean

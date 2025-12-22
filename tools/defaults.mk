@@ -20,7 +20,6 @@ CFLAGS := \
 	-march=x86-64
 
 ASFLAGS := \
-	-Wall \
 	-f elf64
 
 LDFLAGS := \
@@ -42,12 +41,12 @@ else
 	CFLAGS += -O3
 endif
 
-SRC = $(shell find src -name "*.c" -o -name "*.s")
-OBJ = $(patsubst src/%, $(OBJDIR)/%.o, $(SRC))
-DEP = $(OBJ:.o=.d)
-
 BINDIR = bin
 OBJDIR = obj
 SRCDIR = src
+
+SRC = $(shell find src -name "*.c" -o -name "*.s")
+OBJ = $(patsubst src/%, $(OBJDIR)/%.o, $(SRC))
+DEP = $(OBJ:.o=.d)
 
 -include $(DEP)

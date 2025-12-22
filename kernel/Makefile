@@ -10,7 +10,6 @@ CFLAGS += \
 	-fno-omit-frame-pointer \
 	-fno-stack-protector \
 	-fno-stack-check \
-	-fPIE \
 	-mno-red-zone \
 	-mcmodel=kernel \
 	-I src/include \
