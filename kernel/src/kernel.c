@@ -24,7 +24,5 @@ void kstart()
         fb_ptr[i * (framebuffer->pitch / 4) + i] = 0xffffff;
     }
 
-    __asm__ volatile("ud2");
-
     halt_loop();
 }
