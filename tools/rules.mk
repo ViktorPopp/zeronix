@@ -3,7 +3,7 @@ $(OBJDIR)/%.c.o: $(SRCDIR)/%.c
 	@printf "  CC\t$<\n"
 	@$(CC) $(CFLAGS) -MMD -MP -MF $(OBJDIR)/$*.c.d -c -o $@ $<
 
-$(OBJDIR)/%.s.o: $(SRCDIR)/%.s
+$(OBJDIR)/%.asm.o: $(SRCDIR)/%.asm
 	@$(MKDIR)
 	@printf "  AS\t$<\n"
 	@$(AS) $(ASFLAGS) $< -o $@

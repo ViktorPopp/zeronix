@@ -25,6 +25,8 @@ LDFLAGS += \
 
 include $(RULES_MK)
 
+.DEFAULT_GOAL := all
+
 .PHONY: all
 all: $(BINDIR)/$(TARGET)
 

@@ -45,8 +45,13 @@ BINDIR = bin
 OBJDIR = obj
 SRCDIR = src
 
-SRC = $(shell find src -name "*.c" -o -name "*.s")
-OBJ = $(patsubst src/%, $(OBJDIR)/%.o, $(SRC))
-DEP = $(OBJ:.o=.d)
+SRC_C := $(shell find $(SRCDIR) -name "*.c" | sort)
+SRC_ASM := $(shell find $(SRCDIR) -name "*.asm" | sort)
+
+OBJ_C := $(SRC_C:$(SRCDIR)/%.c=$(OBJDIR)/%.c.o)
+OBJ_ASM := $(SRC_ASM:$(SRCDIR)/%.asm=$(OBJDIR)/%.asm.o)
+OBJ := $(OBJ_C) $(OBJ_ASM)
+
+DEP := $(OBJ_C:.o=.d)
 
 -include $(DEP)
