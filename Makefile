@@ -12,6 +12,8 @@ QEMU_FLAGS := \
 	-m 128M -M smm=off -serial stdio -d int -D qemu.log \
 	-no-reboot -no-shutdown -M q35
 
+.DEFAULT_GOAL := all
+
 .PHONY: all
 all: $(OUTPUT)
 
