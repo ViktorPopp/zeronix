@@ -80,6 +80,10 @@ bear: clean
 deps:
 	@git submodule update --init
 
+.PHONY: hooks
+hooks:
+	@git config core.hooksPath .githooks
+
 .PHONY: clean
 clean:
 	@$(MAKE) -C kernel clean --no-print-directory

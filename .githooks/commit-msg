@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+commit_msg_file=$1
+commit_msg=$(head -n 1 "$commit_msg_file")
+
+regex='^(feat|fix|docs|style|refactor|perf|test|chore|merge|bump|release)(\([^)]*\))?:\s([A-Za-z0-9 _\-\.,!]+)$'
+
+if ! printf '%s\n' "$commit_msg" | grep -Eq "$regex"; then
+    echo "ERROR: Commit message does not match required format:"
+    echo "  $regex"
+    exit 1
+fi
