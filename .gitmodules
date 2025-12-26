@@ -4,3 +4,6 @@
 [submodule "kernel/libs/limine"]
 	path = kernel/libs/limine
 	url = https://github.com/projectzerodev/limine-protocol.git
+[submodule "meta/doxy/doxygen-awesome-css"]
+	path = meta/doxy/doxygen-awesome-css
+	url = https://github.com/jothepro/doxygen-awesome-css.git

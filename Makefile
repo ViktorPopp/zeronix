@@ -84,6 +84,10 @@ deps:
 hooks:
 	@git config core.hooksPath .githooks
 
+.PHONY: docs
+docs:
+	@doxygen meta/doxy/Doxyfile
+
 .PHONY: clean
 clean:
 	@$(MAKE) -C kernel clean --no-print-directory
