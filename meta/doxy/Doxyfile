@@ -1005,7 +1005,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = kernel/src/ README.md docs/ # meta/screenshots/
+INPUT                  = kernel/src/ README.md docs/
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1229,7 +1229,7 @@ USE_MDFILE_AS_MAINPAGE = README.md
 # command in order to be used as directory documentation.
 # The default value is: YES.
 
-IMPLICIT_DIR_DOCS      = NO # ?
+IMPLICIT_DIR_DOCS      = YES
 
 # The Fortran standard specifies that for fixed formatted Fortran code all
 # characters from position 72 are to be considered as comment. A common
@@ -1265,7 +1265,7 @@ INLINE_SOURCES         = NO
 # Fortran comments will always remain visible.
 # The default value is: YES.
 
-STRIP_CODE_COMMENTS    = NO # ?
+STRIP_CODE_COMMENTS    = YES
 
 # If the REFERENCED_BY_RELATION tag is set to YES then for each documented
 # entity all documented functions referencing it will be listed.
@@ -1469,8 +1469,7 @@ HTML_STYLESHEET        =
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = meta/doxy/doxygen-awesome-css/doxygen-awesome.css \
-                        meta/doxy/doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+HTML_EXTRA_STYLESHEET  =
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -2761,7 +2760,7 @@ UML_LIMIT_NUM_FIELDS   = 10
 # Minimum value: 0, maximum value: 100, default value: 10.
 # This tag requires that the tag UML_LOOK is set to YES.
 
-UML_MAX_EDGE_LABELS    = 0
+UML_MAX_EDGE_LABELS    = 1
 
 # If the DOT_UML_DETAILS tag is set to NO, Doxygen will show attributes and
 # methods without types and arguments in the UML graphs. If the DOT_UML_DETAILS
