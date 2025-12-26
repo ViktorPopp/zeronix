@@ -7,6 +7,6 @@ regex='^(feat|fix|docs|style|refactor|perf|test|chore|merge|bump|release)(\([^)]
 
 if ! printf '%s\n' "$commit_msg" | grep -Eq "$regex"; then
     echo "ERROR: Commit message does not match required format:"
-    echo "  $regex"
+    echo "$regex"
     exit 1
 fi
