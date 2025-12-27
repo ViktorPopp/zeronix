@@ -30,10 +30,22 @@ include $(RULES_MK)
 .PHONY: all
 all: $(BINDIR)/$(TARGET)
 
+.PHONY: htmldoc
+htmldoc:
+	@cd docs && \
+	printf ">>> Generating XML\n" && \
+	doxygen > /dev/null && \
+	printf ">>> Generating HTML\n" && \
+	$(MAKE) html > /dev/null
+
+.PHONY: cleandoc
+cleandoc:
+	@rm -rf docs/{build,output,source/gen}
+
 .PHONY: clean
 clean:
 	@rm -rf $(BINDIR) $(OBJDIR)
 
 .PHONY: nuke
-nuke: clean
+nuke: clean cleandoc
 	@rm -rf libs/

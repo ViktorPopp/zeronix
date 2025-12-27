@@ -84,25 +84,13 @@ deps:
 hooks:
 	@git config core.hooksPath .githooks
 
-.PHONY: htmldoc
-htmldoc:
-	@cd kernel/docs && \
-	printf ">>> Generating XML\n" && \
-	doxygen > /dev/null && \
-	printf ">>> Generating HTML\n" && \
-	$(MAKE) html > /dev/null
-
-.PHONY: cleandoc
-cleandoc:
-	@rm -rf kernel/docs/{build,output,source/gen}
-
 .PHONY: clean
 clean:
 	@$(MAKE) -C kernel clean --no-print-directory
 	@rm -rf $(OUTPUT) qemu.log
 
 .PHONY: nuke
-nuke: clean cleandoc
+nuke: clean
 	@$(MAKE) -C kernel nuke --no-print-directory
 	@rm -rf limine
 	@rm -rf edk2-ovmf
