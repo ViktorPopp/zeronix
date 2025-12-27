@@ -84,6 +84,14 @@ deps:
 hooks:
 	@git config core.hooksPath .githooks
 
+.PHONY: htmldoc
+htmldoc:
+	@cd kernel/docs && \
+	printf ">>> Generating XML\n" && \
+	doxygen > /dev/null && \
+	printf ">>> Generating HTML\n" && \
+	$(MAKE) html > /dev/null
+
 .PHONY: clean
 clean:
 	@$(MAKE) -C kernel clean --no-print-directory
