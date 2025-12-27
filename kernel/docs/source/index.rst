@@ -10,4 +10,4 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-   api/library_root
+   gen/gen_root

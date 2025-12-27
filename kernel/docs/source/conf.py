@@ -20,9 +20,9 @@ breathe_projects = {
 breathe_default_project = "Kernel"
 
 exhale_args = {
-    "containmentFolder":     "./api",
-    "rootFileName":          "library_root.rst",
-    "rootFileTitle":         "Library API",
+    "containmentFolder":     "./gen",
+    "rootFileName":          "gen_root.rst",
+    "rootFileTitle":         "Source Documentation",
     "doxygenStripFromPath":  "..",
     "createTreeView":        True,
 }
