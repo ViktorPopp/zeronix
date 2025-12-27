@@ -1,0 +1,12 @@
+@INCLUDE               = "./Doxyfile.cfg"
+
+GENERATE_HTML          = NO
+GENERATE_XML           = YES
+XML_PROGRAMLISTING     = NO
+
+PROJECT_NAME           = "Zeronix Kernel"
+PROJECT_BRIEF          = "A Minimal Kernel"
+OUTPUT_DIRECTORY       = "./output"
+
+INPUT                  = "../src/include"
+RECURSIVE              = YES
